@@ -1,0 +1,167 @@
+@import '@module';
+
+.card {
+	background: #fff;
+	border-radius: .3rem;
+	-webkit-box-shadow: 0 0.06rem 0.25rem 0 rgba(60, 65, 80, .15);
+	box-shadow: 0 0.06rem 0.25rem 0 rgba(60, 65, 80, .15);
+	margin-bottom: 20px;
+	width: 100%;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+
+	display: flex;
+
+	.card-title {
+		color: #222;
+	}
+
+	.card-text {
+		white-space: pre-line;
+		color: #5E5E5E;
+		margin-top: 20px;
+	}
+
+	h2, h3 {
+		font-size: 20px;
+		margin-bottom: 5px;
+	}
+
+	.card-wrapper {
+		display: flex;
+
+		.left {
+			flex: 0 0 65%;
+		}
+
+		.right {
+			float: right;
+			text-align: right;
+			flex: 1;
+		}
+	}
+
+	&:hover {
+		box-shadow: 0 0.06rem 0.25rem 0 rgba(60, 65, 80, .3);
+	}
+
+	.cardContent {
+		flex-grow: 1;
+		padding: 50px;
+	}
+
+	.image-slider {
+		display: flex;
+		flex-direction: column;
+		min-width: 25%;
+		//flex-wrap: wrap;
+		//max-width: 100%;
+		min-height: 100px;
+
+		//flex-grow: ;
+
+		.image {
+			width: 100%;
+			height: auto;
+			flex-grow: 1;
+			min-height: 100px;
+			transition: all .3s ease-in-out;
+			//border: 1px solid white;
+			//border-color: white;
+
+			&:hover {
+				//box-shadow: 0 0.06rem 0.25rem 0 $colour-primary;
+				//border: 4px solid white;
+				cursor: pointer;
+				z-index: 10;
+			}
+
+			img {
+				height: auto;
+				object-fit: cover;
+			}
+		}
+
+		//&.image-slider-four {
+		//
+		//	flex-wrap: wrap !important;
+		//	.image {
+		//		width: 50% !important;
+		//	}
+		//}
+	}
+
+	// full width
+	&.card-row-block {
+		.image-slider {
+			.image {
+				max-width: 300px;
+
+				img {
+					height: 100%;
+					//width: auto;
+					width: 100%
+
+				}
+			}
+
+			&.image-slider-four {
+				flex-wrap: wrap !important;
+				flex-direction: row;
+
+				.image {
+					width: 50% !important;
+				}
+			}
+		}
+	}
+
+	&.card-row-grid {
+		flex-direction: column;
+
+		.image-slider {
+			flex-direction: row;
+
+			.image {
+				//height: 300px;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			&.image-slider-four {
+				flex-wrap: wrap !important;
+
+				.image {
+					width: 50% !important;
+				}
+			}
+
+			&.image-slider-two {
+
+				min-height: 296px !important;
+
+				.image {
+				}
+			}
+		}
+
+		.card-wrapper {
+			display: block;
+
+			h3 {
+				size: 20px;
+				font-size: 15px;
+				opacity: 0.7;
+				margin-bottom: 20px;
+			}
+
+			.right {
+				width: 100%;
+				text-align: left;
+			}
+		}
+	}
+
+}

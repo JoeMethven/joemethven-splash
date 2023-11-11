@@ -1,0 +1,157 @@
+@import '@module';
+@import url('https://use.typekit.net/brz8anz.css');
+
+.wrapper {
+    min-height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        padding-left: 0;
+        margin: 0.46875rem 0 0;
+
+        li {
+            margin-left: 1.875rem;
+
+            a {
+                color: #252525;
+                font-size: 1.5rem;
+                transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            svg {
+                width: 0.875em;
+                overflow: visible;
+            }
+        }
+
+        li:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        max-width: 1200px;
+        padding: 3.75rem 1.875rem;
+
+        .button-content {
+            position: absolute;
+            right: 0;
+            margin-right: 20px;
+            top: 0;
+        }
+
+        @include md-down {
+            padding: 50px 0;
+
+            .button-content {
+                display: none;
+            }
+        }
+
+        .row {
+            padding: 100px 0;
+            //display: grid;
+            //grid-template-columns: 50% 50%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            transition: all 0.3s ease-in-out;
+
+            &.row-block {
+                .col {
+                    width: 100%;
+                }
+            }
+
+            &.row-inline {
+                .col {
+                    width: 50%;
+                }
+            }
+
+            .col {
+                padding: 0 15px;
+                transition: width $transition-accelerate 0.2s;
+            }
+
+            @include md-down {
+                &.row-inline {
+                    margin: 0;
+                    padding: 0;
+                    .col {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            position: relative;
+            margin-right: 1.875rem;
+            //max-width: 100px;
+            //height: auto;
+            //margin-bottom: $qsu;
+
+            img {
+                height: 80px;
+                width: 80px;
+                -o-object-fit: cover;
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+        }
+
+        .signature {
+            position: relative;
+            max-width: 100px;
+            height: auto;
+            margin-left: -40px;
+
+            img {
+                max-width: 200px;
+            }
+        }
+
+        h1 {
+            margin-bottom: $hsu;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    footer {
+        flex-shrink: 1;
+        padding: $bsu;
+        max-width: 1200px;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    @include lg-down {
+        h1 {
+            font-size: $font-size-base * 2.4;
+        }
+    }
+    @include md-down {
+        & {
+            height: auto !important;
+        }
+        h3 {
+            font-size: 19px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../styles/config';
+
+.button {
+	background: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: .3rem;
+	display: inline-block;
+	max-width: 300px;
+	width: fit-content;
+	padding: 8px 20px;
+	margin-top: 20px;
+	margin-right: 10px;
+
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+
+	&.whiteBg {
+		background: white;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: white;
+		background: $colour-primary;
+		border-color: $colour-primary;
+	}
+
+}
